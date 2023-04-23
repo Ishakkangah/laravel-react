@@ -1,4 +1,5 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import DefautlLayout from "./components/DefaultLayout";
 import GuestLayouts from "./components/GuestLayouts";
 import Dashboard from "./views/Dashboard";
 import Login from "./views/Login";
@@ -8,11 +9,21 @@ import Surveys from "./views/Surveys";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Dashboard />,
-    },
-    {
-        path: "/surveys",
-        element: <Surveys />,
+        element: <DefautlLayout />,
+        children: [
+            {
+                path: "/dashboard",
+                element: <Navigate to="/"></Navigate>,
+            },
+            {
+                path: "/",
+                element: <Dashboard />,
+            },
+            {
+                path: "/surveys",
+                element: <Surveys />,
+            },
+        ],
     },
     {
         path: "/",
