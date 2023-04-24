@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, UserIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Outlet, NavLink } from "react-router-dom";
 import { userStateContext } from "../contexts/ContextProvider";
+import { Navigate } from "react-router-dom";
 
 const navigation = [
     { name: "Dashboard", to: "/" },
