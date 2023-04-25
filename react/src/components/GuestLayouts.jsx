@@ -3,7 +3,7 @@ import { userStateContext } from "../contexts/ContextProvider";
 import { Navigate } from "react-router-dom";
 
 export default function GuestLayouts() {
-    const { currentUser, userToken } = userStateContext();
+    const { userToken } = userStateContext();
 
     if (userToken) {
         return <Navigate to="/"></Navigate>;
